@@ -126,7 +126,7 @@ export class SslForFree {
         const ep = `/certificates/${id}/download`
         await axios.default({
             method: "GET",
-            params: { access_key: this.apiKey },
+            params: { access_key: this.apiKey, include_cross_signed: 1 },
             url: this.baseurl + ep,
             responseType: "stream"
         }).then(function (response) {
